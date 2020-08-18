@@ -42,12 +42,12 @@ const DisplayItemList = (props) => (
       </Link> */}
       {/* <div style={{ width: 32 }}></div> */}
       <Link to={"/delete/" + props.data._id}>
-      <input
-        style={{height:24,width:80}}
-        value="Delete"
-        readOnly
-        className="btn btn-outline-danger"     
-      />
+        <input
+          style={{ height: 24, width: 80 }}
+          value="Delete"
+          readOnly
+          className="btn btn-outline-danger"
+        />
       </Link>
     </td>
   </tr>
@@ -66,6 +66,7 @@ export default class InventoryList extends Component {
       backupforfilter: [],
       modalVisible: false,
       currentID: "",
+      loading: false,
     };
     this.filterResults = this.filterResults.bind(this);
     if (props.location.toastVisibility) {
@@ -85,7 +86,11 @@ export default class InventoryList extends Component {
     axios
       .get("https://inventorybackend.herokuapp.com/inventory/")
       .then((response) => {
-        this.setState({ list: response.data, backupforfilter: response.data });
+        this.setState({
+          list: response.data,
+          backupforfilter: response.data,
+          loading: false,
+        });
       })
       .catch(function (error) {
         console.log(error);
@@ -146,7 +151,9 @@ export default class InventoryList extends Component {
           defaultValue="New Item"
           className="btn btn-success"
           onClick={() => {
-            window.location.replace("https://inventorybackend.herokuapp.com/create");
+            window.location.replace(
+              "https://inventorybackend.herokuapp.com/create"
+            );
           }}
           style={{ width: 120, float: "right", marginBottom: 8 }}
         ></input>
@@ -166,6 +173,13 @@ export default class InventoryList extends Component {
           </thead>
           <tbody>{this.displayItemMstMethod()}</tbody>
         </table>
+        {this.state.loading && (
+          <div class="text-center">
+            <div class="spinner-border" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
+          </div>
+        )}
       </div>
     );
   }

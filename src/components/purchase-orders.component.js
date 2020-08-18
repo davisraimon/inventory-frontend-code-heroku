@@ -78,6 +78,7 @@ export default class PurchaseOrders extends Component {
       purchase_orders: [],
       inventory_mst: [],
       backupforfilter: [],
+      loading: true,
     };
     this.filterResults = this.filterResults.bind(this);
     if (props.location.toastVisibility) {
@@ -98,6 +99,7 @@ export default class PurchaseOrders extends Component {
             this.setState({
               purchase_orders: response.data,
               backupforfilter: response.data,
+              loading: false,
             });
           })
           .catch(function (error) {
@@ -198,6 +200,13 @@ export default class PurchaseOrders extends Component {
           </thead>
           <tbody>{this.displayItemMstMethod()}</tbody>
         </table>
+        {this.state.loading && (
+          <div class="text-center">
+            <div class="spinner-border" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
+          </div>
+        )}
       </div>
     );
   }
