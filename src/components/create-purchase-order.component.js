@@ -10,7 +10,6 @@ export default function CreatePurchaseOrder(props) {
   const [name, setname] = useState("");
   const [desc, setdesc] = useState("");
   const [price, setprice] = useState("");
-  const [category, setcategory] = useState("None");
   const [currentstock, setCurrentStock] = useState("0");
   const [requiredstock, setRequireStock] = useState("0");
   const [orderquantity, setOrderquantity] = useState("1");
@@ -29,7 +28,6 @@ export default function CreatePurchaseOrder(props) {
     setname("");
     setdesc("");
     setprice("");
-    setcategory("None");
     setCurrentStock("0");
     setRequireStock("0");
   }

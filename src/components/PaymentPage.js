@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import StripeCheckout from "react-stripe-checkout";
@@ -20,9 +20,9 @@ export default function PaymentPage(props) {
   var datetoday = new Date();
   var today = datetoday.toLocaleDateString("en-US");
 
-  var datetomorrow = new Date(datetoday);
-  datetomorrow.setDate(datetoday.getDate() + 1);
-  var tomorrow = datetomorrow.toLocaleDateString("en-US");
+  // var datetomorrow = new Date(datetoday);
+  // datetomorrow.setDate(datetoday.getDate() + 1);
+  // var tomorrow = datetomorrow.toLocaleDateString("en-US");
 
   function handleToken(token, addresses) {
     const newOrder = {

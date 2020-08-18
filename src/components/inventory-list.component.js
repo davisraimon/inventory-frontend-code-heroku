@@ -1,14 +1,12 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import csvlogo from "../csv3.png";
-import deletelogo from "../delete.jpg";
 import orderlogo from "../ordericon.jpg";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { TextField, InputAdornment } from "@material-ui/core";
 import SearchIcon from "@material-ui/icons/Search";
-import { Modal, Button } from "antd";
 import "antd/dist/antd.css";
 
 const DisplayItemList = (props) => (
