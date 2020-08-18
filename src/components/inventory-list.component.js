@@ -146,7 +146,7 @@ export default class InventoryList extends Component {
           defaultValue="New Item"
           className="btn btn-success"
           onClick={() => {
-            window.location.replace("http://localhost:3000/create");
+            window.location.replace("https://inventorybackend.herokuapp.com/create");
           }}
           style={{ width: 120, float: "right", marginBottom: 8 }}
         ></input>

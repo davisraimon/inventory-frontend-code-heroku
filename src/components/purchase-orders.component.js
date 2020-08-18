@@ -173,7 +173,7 @@ export default class PurchaseOrders extends Component {
           className="btn btn-success"
           onClick={() => {
             window.location.replace(
-              "http://localhost:3000/createpurchaseorder/0"
+              "https://inventorybackend.herokuapp.com/createpurchaseorder/0"
             );
           }}
           style={{ width: 120, float: "right", marginBottom: 8 }}
