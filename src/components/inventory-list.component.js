@@ -66,7 +66,7 @@ export default class InventoryList extends Component {
       backupforfilter: [],
       modalVisible: false,
       currentID: "",
-      loading: false,
+      loading: true,
     };
     this.filterResults = this.filterResults.bind(this);
     if (props.location.toastVisibility) {
